@@ -7,6 +7,10 @@ from langchain_community.chat_models import ChatOpenAI
 import json
 from pathlib import Path
 
+
+#build a log with: the query, retrieved clauses, LLM response for evaluation later
+#whether retrieval matched the query and how well the generative layer used the context
+
 def log_rag_interaction(question, context_docs, response, log_file="rag_outputs.json"):
     context_strings = [doc.page_content for doc in context_docs]
     new_entry = {
@@ -28,7 +32,7 @@ def log_rag_interaction(question, context_docs, response, log_file="rag_outputs.
 
 
 # === Step 1: API key for OpenRouter ===
-os.environ["OPENROUTER_API_KEY"] = ""
+os.environ["OPENROUTER_API_KEY"] = "insert key here"
 
 # === Step 2: LLM setup ===
 llm = ChatOpenAI(
