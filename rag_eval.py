@@ -7,7 +7,7 @@ from deepeval.evaluator import evaluate
 import json
 
 # === Config ===
-RAG_LOG_FILE = "rag_outputs.json"  # update if your file is named differently
+RAG_LOG_FILE = "rag_outputs.json" 
 
 # Load logs: expects a list of dicts with 'input', 'actual_output', and 'context'
 def load_rag_logs(log_path):
@@ -25,7 +25,7 @@ metrics = [
 
 # Evaluate each RAG test case
 def evaluate_rag_responses(logs):
-    print(f"\n🔍 Evaluating {len(logs)} RAG responses...\n")
+    print(f"\n Evaluating {len(logs)} RAG responses...\n")
     for i, entry in enumerate(logs, 1):
         try:
             test_case = LLMTestCase(
